@@ -42,4 +42,3 @@ class LRUCache(BaseCaching):
             self.update_usage_order(key)
             return self.cache_data[key]
         return None
-

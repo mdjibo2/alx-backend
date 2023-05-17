@@ -34,7 +34,9 @@ class LFUCache(BaseCaching):
         """ Evict the least frequent key(s)
         """
         min_frequency = min(self.frequency.values())
-        least_frequent_keys = [k for k, v in self.frequency.items() if v == min_frequency]
+        least_frequent_keys = [
+            k for k, v in self.frequency.items() if v == min_frequency
+        ]
         least_recently_used_key = next(iter(self.usage_order))
         for key in self.usage_order:
             if key in least_frequent_keys:
